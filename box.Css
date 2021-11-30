@@ -1,0 +1,26 @@
+body {
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+.box {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    height: 50px;
+    width: 50px;
+    border-radius: 10%;
+    background-color: greenyellow;
+}
+
+.live_score {
+    color: white;
+    background-color: rgb(39, 39, 39);
+    max-width: min-content;
+    margin: 20px;
+    padding: 15px;
+    border-radius: 20px;
+
+    
+}
