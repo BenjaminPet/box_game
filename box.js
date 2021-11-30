@@ -19,7 +19,7 @@ function time() {
         counter--;
         // Display 'counter' wherever you want to display it.
         if (counter <= 0) {
-            document.getElementById("timer").location.replace("https://www.w3schools.com");
+            window.location.href = "./scoreboard.html";
             return;
         }else{
             document.getElementById("timer").innerHTML = "timer: " + counter;
