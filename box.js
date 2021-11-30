@@ -5,8 +5,8 @@ function random() {
 
     alert(rtop + " and " + rwidth)
 
-    document.getElementsByClassName("box").top = rtop;
-    document.getElementsByClassName("box").width = rwidth;
+    document.getElementsByClassName("box").top = rtop + "%";
+    document.getElementsByClassName("box").width = rwidth + "%";
 }
 
 function time() {
