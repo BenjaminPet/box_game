@@ -24,3 +24,12 @@ body {
 
     
 }
+
+.timer {
+    color: white;
+    font-size: large;
+    max-width: min-content;
+    margin: 20px;
+
+    
+}
