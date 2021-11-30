@@ -12,11 +12,12 @@ function random() {
 function time() {
     for (i = 60; i != 0; i--) {
         await delay(1000);
-        document.getElementsByClassName("time").innerhtml = "time " + i
+        document.getElementsByClassName("time").innertext = "time " + i
     }
 }
 
 function start() {
+    alert("1")
     random();
     time();
 }
