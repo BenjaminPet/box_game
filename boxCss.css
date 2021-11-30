@@ -54,3 +54,8 @@ body {
     right: 45%;
     top: 40%;
 }
+
+
+#theScoreboard {
+    margin: 100px;
+}

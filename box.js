@@ -14,7 +14,7 @@ function random() {
 }
 
 function time() {
-    var counter = 10;
+    var counter = 5;
     var interval = setInterval(function() {
         counter--;
         // Display 'counter' wherever you want to display it.
