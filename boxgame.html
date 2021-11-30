@@ -5,15 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>box game</title>
+
+    <!--css-->
     <link rel="stylesheet" href="boxCss.css">
 </head>
 <body>
 
-    <button onclick="start();" class="start">start</button>
-    <h3 class="live_score">Score</h3>
-    <h3 class="timer">time</h3>
-    <button onclick="box();"class="box"></button>
+    <button type="button" onclick="start()" id="start">START</button>
+    <h3 id="live_score">Score</h3>
+    <h3 id="timer">Time</h3>
+    <button onclick="random()" id="box"></button>
 
-    <script src="/box.js"></script>
+<!--jq-->
+<!--<script src="https://code.jquery.com/jquery-3.6.0.js"
+ integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+ crossorigin="anonymous"></script>-->
+ <!--js-->
+<script type="text/javascript" src="box.js"></script>
 </body>
 </html>

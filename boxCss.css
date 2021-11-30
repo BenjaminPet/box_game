@@ -4,8 +4,9 @@ body {
     margin: 0;
 }
 
-.box {
+#box {
     position: absolute;
+    display: none;
     border: 0px;
     top: 10%;
     left: 10%;
@@ -15,10 +16,11 @@ body {
     background-color: greenyellow;
 }
 
-.live_score {
+#live_score {
+    position: absolute;
     color: white;
     background-color: rgb(39, 39, 39);
-    max-width: min-content;
+    min-width: min-content;
     float:inline-end;
     margin: 20px;
     padding: 15px;
@@ -27,19 +29,20 @@ body {
     
 }
 
-.timer {
+#timer {
+    position: absolute;
     color: white;
-    font-size: large;
+    font-size: 50px;
     max-width: min-content;
     float: right;
     margin: 20px;
     padding: 15px;
-    left: 0;
+    right: 0;
 
     
 }
 
-.start {
+#start {
     position: absolute; 
     background-color: rgba(0, 0, 0, 0);
     color: white;
@@ -50,8 +53,4 @@ body {
     font-size: 40px;
     right: 45%;
     top: 40%;
-}
-.start: {
-    background-color: rgb(32, 32, 32);
-    
 }

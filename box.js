@@ -1,23 +1,35 @@
-
+var score = 0;
 function random() {
     var rtop = Math.floor(Math.random() * 100);
-    var rwidth = Math.floor(Math.random() * 100);
+    var rleft = Math.floor(Math.random() * 100);
 
-    alert(rtop + " and " + rwidth)
+    console.log(rtop + " and " + rtop);
 
-    document.getElementsByClassName("box").top = rtop + "%";
-    document.getElementsByClassName("box").width = rwidth + "%";
+    document.getElementById("box").style.top = rtop + "%";
+    document.getElementById("box").style.left = rleft + "%";
+
+    score++;
+    document.getElementById("live_score").innerHTML = "Score: " + score;
+    console.log(score);
 }
 
 function time() {
-    for (i = 60; i != 0; i--) {
-        await delay(1000);
-        document.getElementsByClassName("time").innertext = "time " + i
-    }
+    var counter = 10;
+    var interval = setInterval(function() {
+        counter--;
+        // Display 'counter' wherever you want to display it.
+        if (counter <= 0) {
+            document.getElementById("timer").location.replace("https://www.w3schools.com");
+            return;
+        }else{
+            document.getElementById("timer").innerHTML = "timer: " + counter;
+        }
+    }, 1000);
 }
 
 function start() {
-    alert("1")
+    document.getElementById("start").style.display = "none";
+    document.getElementById("box").style.display = "block";
     random();
     time();
 }
