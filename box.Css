@@ -34,3 +34,11 @@ body {
 
     
 }
+
+.start {
+    color: white;
+    font-size: 100px;
+    right: 50%;
+    margin: 20px;
+    right: 0;
+}
