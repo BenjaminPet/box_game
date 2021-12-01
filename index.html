@@ -43,25 +43,23 @@
   </style>
 
 
-  <!-- Custom styles for this template -->
-  <link href="signin.css" rel="stylesheet">
 </head>
 
 <body class="text-center">
 
 
 
-    <form class="form-signin" onsubmit="new_game()" method="POST">
+    <form class="form-signin" action="box_game.html" onsubmit="new_game()" id="boxloggin" method="POST" >
       <h1 class="h1"><i class="bi bi-hand-index-fill"></i> The box game <i class="bi bi-app"></i></h1>
       <br>
       <h1 class="h3 mb-3 fw-normal">Please make a game name</h1>
 
       <div class="form-floating">
-        <input type="text" class="form-control" id="username" placeholder="User Name">
+        <input type="text" class="form-control" id="username" name="username" placeholder="User Name">
         <label for="floatingInput">User Name</label>
       </div>
       <div class="form-floating">
-        <input type="number" class="form-control" id="Level" placeholder="Number from 1 to 5" max="5"
+        <input type="number" class="form-control" id="level" name="level" placeholder="Number from 1 to 5" max="5"
           min="1">
         <label for="floatingPassword">Level</label>
       </div>

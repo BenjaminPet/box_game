@@ -1,9 +1,9 @@
 var score = 0;
+var noe = [];
+
 function get_random() {
     var rtop = Math.floor(Math.random() * 100);
     var rleft = Math.floor(Math.random() * 100);
-
-    console.log(rtop + " and " + rtop);
 
     document.getElementById("box").style.top = rtop + "%";
     document.getElementById("box").style.left = rleft + "%";
@@ -31,18 +31,30 @@ function time() {
 function start_round() {
     document.getElementById("start").style.display = "none";
     document.getElementById("box").style.display = "block";
-    random();
+    get_random();
     time();
+    console.log(noe);
+}
+function thelevel(x) {
+    var boxd = document.querySelectorAll("box");
+    if (x === 1) {
+        boxd.style.width = "10px";
+        boxd.style.height = "10px";
+    }
 }
 
 function new_game() {
-    console.log("hello");
-    window.location.href = "./box_game.html";
+    var user = document.getElementById("username").value;
+    var levelf = document.getElementById("level").value;
+    console.log(levelf);
+    thelevel(levelf);
+    noe = [user, levelf];
+
 }
 
 function scoreboard() {
 
-
+    
 
 
     var table = document.getElementById("TheScoreboard");
@@ -56,7 +68,7 @@ function scoreboard() {
     var cell3 = row.insertCell(2);
 
     // Add some text to the new cells:
-    cell1.innerHTML = "NEW CELL1";
-    cell2.innerHTML = "NEW CELL2";
+    cell1.innerHTML = "jfjf";
+    cell2.innerHTML = noe(1);
     cell3.innerHTML = score;
 }
