@@ -1,77 +1,81 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.88.1">
-    <title>box game login</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.88.1">
+  <title>box game login</title>
 
-    
-
-    <!-- Bootstrap core CSS -->
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
-    <!-- Favicons -->
-      <meta name="theme-color" content="#7952b3">
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
 
 
-    <style>
-      body {
-        padding: 100px 200px;
+
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+
+  <!-- Favicons -->
+  <meta name="theme-color" content="#7952b3">
+
+
+  <style>
+    body {
+      padding: 100px 200px;
+    }
+
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
       }
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-
-    
-    <!-- Custom styles for this template -->
-    <link href="signin.css" rel="stylesheet">
-  </head>
-  <body class="text-center">
-    
-<main class="form-signin">
-  <form>
-    <h1 class="h1 ">Please make a game name <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box" viewBox="0 0 16 16">
-      <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5 8.186 1.113zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"/>
-    </svg></h1>
-    <br>
-    <h1 class="h3 mb-3 fw-normal">Please make a game name</h1>
-
-    <div class="form-floating">
-      <input type="text" class="form-control" id="floatingInput" placeholder="User Name">
-      <label for="floatingInput">User Name</label>
-    </div>
-    <div class="form-floating">
-      <input type="number" class="form-control" id="floatingPassword" placeholder="Number from 1 to 5" max="5" min="1">
-      <label for="floatingPassword">Level</label>
-    </div>
-
-    <div class="checkbox mb-3">
-      <label>
-        <input type="checkbox" value="remember-me"> Dark Mode
-      </label>
-    </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-    <p class="mt-5 mb-3 text-muted">&copy; laget av benjamin</p>
-  </form>
-</main>
+    }
+  </style>
 
 
-    
-  </body>
+  <!-- Custom styles for this template -->
+  <link href="signin.css" rel="stylesheet">
+</head>
+
+<body class="text-center">
+
+
+
+    <form class="form-signin" onsubmit="new_game()" method="POST">
+      <h1 class="h1"><i class="bi bi-hand-index-fill"></i> The box game <i class="bi bi-app"></i></h1>
+      <br>
+      <h1 class="h3 mb-3 fw-normal">Please make a game name</h1>
+
+      <div class="form-floating">
+        <input type="text" class="form-control" id="username" placeholder="User Name">
+        <label for="floatingInput">User Name</label>
+      </div>
+      <div class="form-floating">
+        <input type="number" class="form-control" id="Level" placeholder="Number from 1 to 5" max="5"
+          min="1">
+        <label for="floatingPassword">Level</label>
+      </div>
+
+      <div class="form-check form-switch m-3">
+        <label>
+          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"> Dark Mode
+        </label>
+      </div>
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+      <p class="mt-5 mb-3 text-muted">&copy; laget av benjamin</p>
+    </form>
+
+  <script type="text/javascript" src="box.js"></script>
+</body>
+
 </html>

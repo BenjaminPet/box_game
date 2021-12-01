@@ -35,6 +35,11 @@ function start_round() {
     time();
 }
 
+function new_game() {
+    console.log("hello");
+    window.location.href = "./box_game.html";
+}
+
 function scoreboard() {
 
 

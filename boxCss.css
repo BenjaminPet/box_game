@@ -81,7 +81,8 @@ th {
 }
 
 .restart_button {
-    
+    margin: 100px auto;
+    text-align: center;
 }
 
 
