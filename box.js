@@ -1,5 +1,5 @@
 var score = 0;
-function random() {
+function get_random() {
     var rtop = Math.floor(Math.random() * 100);
     var rleft = Math.floor(Math.random() * 100);
 
@@ -28,7 +28,7 @@ function time() {
     }, 1000);
 }
 
-function start() {
+function start_round() {
     document.getElementById("start").style.display = "none";
     document.getElementById("box").style.display = "block";
     random();
