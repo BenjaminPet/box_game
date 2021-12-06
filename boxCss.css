@@ -5,6 +5,11 @@ body {
     margin: 0;
 }
 
+#body1 {
+    background-color: black;
+    color: white;
+}
+
 h1 {
     margin: 5% auto;
     text-align: center;

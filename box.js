@@ -1,5 +1,7 @@
 var score = 0;
 var noe = [];
+var dark_mode = "";
+
 
 function get_random() {
     var rtop = Math.floor(Math.random() * 100);
@@ -21,6 +23,7 @@ function time() {
         if (counter <= 0) {
             scoreboard();
             window.location.href = "./scoreboard.html";
+            darkmode2();
         }else{
             document.getElementById("timer").innerHTML = "timer: " + counter;
         }
@@ -59,8 +62,15 @@ function darkmode() {
 
   // If the checkbox is checked, display the output text
   if (checkBox.checked == true){
-    document.body.style.backgroundColor = "black";
+    document.getElementById("body1").style.backgroundColor = "black";
+    document.body.style.color = "white";
+    dark_mode = "black";
   } else {
-    document.body.style.backgroundColor = "white";
+    document.getElementById("body1").style.backgroundColor = "white";
+    document.body.style.color = "black";
+    dark_mode = "white";
   }
+}
+function darkmode2() {
+    document.getElementById("body1").style.backgroundColor = dark_mode; 
 }
