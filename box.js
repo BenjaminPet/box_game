@@ -54,6 +54,13 @@ function scoreboard() {
 
 }
 
-function checked() {
-    alert("hello")
+function darkmode() {
+    var checkBox = document.getElementById("backgroundswith");
+
+  // If the checkbox is checked, display the output text
+  if (checkBox.checked == true){
+    document.body.style.backgroundColor = "black";
+  } else {
+    document.body.style.backgroundColor = "white";
+  }
 }
