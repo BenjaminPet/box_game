@@ -20,6 +20,10 @@ th {
     padding: 1% 100px;
 }
 
+.form-floating {
+    color: black;
+}
+
 
 #box {
     position: absolute;
@@ -35,7 +39,6 @@ th {
 
 #live_score {
     position: absolute;
-    color: white;
     background-color: rgb(39, 39, 39);
     min-width: min-content;
     float:inline-end;
@@ -48,7 +51,6 @@ th {
 
 #timer {
     position: absolute;
-    color: white;
     font-size: 50px;
     max-width: min-content;
     float: right;
@@ -62,7 +64,6 @@ th {
 #start {
     position: absolute; 
     background-color: rgba(0, 0, 0, 0);
-    color: white;
     border: 0px;
     border-radius: 10px;
     padding: 10px;
@@ -83,6 +84,15 @@ th {
 .restart_button {
     margin: 100px auto;
     text-align: center;
+}
+.form-check-input ~ body[class=text-center] {
+    background-color: black;
+    color: white;
+} 
+
+.form-check-input:checked ~ body[class=text-center] {
+    background-color: white;
+    color: black;
 }
 
 
