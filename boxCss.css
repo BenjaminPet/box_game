@@ -5,16 +5,12 @@ body {
     margin: 0;
 }
 
-#body1 {
-    background-color: black;
-    color: white;
-}
-
 h1 {
     margin: 5% auto;
     text-align: center;
 
 }
+
 
 table {
     margin: 100px auto;
@@ -43,6 +39,7 @@ th {
 }
 
 #live_score {
+    color: white;
     position: absolute;
     background-color: rgb(39, 39, 39);
     min-width: min-content;
@@ -57,7 +54,7 @@ th {
 #timer {
     position: absolute;
     font-size: 50px;
-    max-width: min-content;
+    min-width: min-content;
     float: right;
     margin: 20px;
     padding: 15px;
@@ -67,6 +64,7 @@ th {
 }
 
 #start {
+    color: white;
     position: absolute; 
     background-color: rgba(0, 0, 0, 0);
     border: 0px;
