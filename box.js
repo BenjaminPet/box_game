@@ -16,7 +16,7 @@ function get_random() {
 function time() {
     var counter = 5;
     document.getElementById("timer").innerHTML = "Timer: 5";
-    var interval = setInterval(function() {
+    var interval = setInterval(function () {
         counter--;
         // Display 'counter' wherever you want to display it.
         if (counter <= 0) {
@@ -33,6 +33,11 @@ function start_round() {
     document.getElementById("box").style.display = "block";
     document.body.style.backgroundColor = localStorage.getItem("dark_mode1");
     document.body.style.color = localStorage.getItem("dark_mode2");
+    var level = localStorage.getItem("level");
+
+    alert(localStorage.getItem("user") + "   " + localStorage.getItem("level"))
+
+    thelevel(level);
     get_random();
     time();
 }
@@ -58,10 +63,6 @@ function thelevel(x) {
 }
 
 function new_game() {
-          
-    localStorage.setItem("user", document.getElementById("username").value);
-    localStorage.setItem("level", document.getElementById("level").value);
-    alert(document.getElementById("level").value + "   " + localStorage.getItem("level"))
     window.location.href = "./index.html";
 }
 
@@ -70,7 +71,16 @@ function scoreboard() {
     document.body.style.color = localStorage.getItem("dark_mode2");
     var user = localStorage.getItem("user");
     var level = localStorage.getItem("level");
-    thelevel(level);
+
+    var x = document.getElementById('myTable').insertRow(-1);
+
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    cell1.innerHTML = "NEW CELL1";
+    cell2.innerHTML = "NEW CELL2";
+    cell3.innerHTML = "NEW CELL1";
+
     noe.push(user, level);
     console.log(user + "   fff " + level + "     " + noe);
 }
@@ -78,20 +88,19 @@ function scoreboard() {
 function darkmode_get() {
     var checkBox = document.getElementById("backgroundswith");
 
-  // If the checkbox is checked, display the output text
-  if (checkBox.checked == true){    
-    document.getElementById("body1").style.backgroundColor = "black";
-    document.body.style.color = "white";
-    localStorage.setItem("dark_mode1", "black");
-    localStorage.setItem("dark_mode2", "white");
-  } else {
-    document.getElementById("body1").style.backgroundColor = "white";
-    document.body.style.color = "black";
-    localStorage.setItem("dark_mode1", "white");
-    localStorage.setItem("dark_mode2", "black");
-  }
-  
-  localStorage.setItem("user", document.getElementById("username").value);
-  localStorage.setItem("level", document.getElementById("level").value);
-  alert(document.getElementById("level").value)
+    // If the checkbox is checked, display the output text
+    if (checkBox.checked == true) {
+        document.getElementById("body1").style.backgroundColor = "black";
+        document.body.style.color = "white";
+        localStorage.setItem("dark_mode1", "black");
+        localStorage.setItem("dark_mode2", "white");
+    } else {
+        document.getElementById("body1").style.backgroundColor = "white";
+        document.body.style.color = "black";
+        localStorage.setItem("dark_mode1", "white");
+        localStorage.setItem("dark_mode2", "black");
+    }
+
+    localStorage.setItem("user", document.getElementById("username").value);
+    localStorage.setItem("level", document.getElementById("level").value);
 }
