@@ -1,5 +1,6 @@
 var score = 0;
 var noe = [];
+var round = 1;
 
 
 function get_random() {
@@ -20,6 +21,7 @@ function time() {
         counter--;
         // Display 'counter' wherever you want to display it.
         if (counter <= 0) {
+            localStorage.setItem("score", score);
             window.location.href = "./scoreboard.html";
         } else {
             document.getElementById("timer").innerHTML = "Timer: " + counter;
@@ -34,8 +36,6 @@ function start_round() {
     document.body.style.backgroundColor = localStorage.getItem("dark_mode1");
     document.body.style.color = localStorage.getItem("dark_mode2");
     var level = localStorage.getItem("level");
-
-    alert(localStorage.getItem("user") + "   " + localStorage.getItem("level"))
 
     thelevel(level);
     get_random();
@@ -62,6 +62,11 @@ function thelevel(x) {
     }
 }
 
+function box_game() {
+    localStorage.setItem("user", document.getElementById("username").value);
+    localStorage.setItem("level", document.getElementById("level").value);
+}
+
 function new_game() {
     window.location.href = "./index.html";
 }
@@ -69,20 +74,25 @@ function new_game() {
 function scoreboard() {
     document.body.style.backgroundColor = localStorage.getItem("dark_mode1");
     document.body.style.color = localStorage.getItem("dark_mode2");
+    var score = localStorage.getItem("score");
     var user = localStorage.getItem("user");
     var level = localStorage.getItem("level");
 
+    // add to table
     var x = document.getElementById('myTable').insertRow(-1);
+    var y = x.insertCell(0);
+    var z = x.insertCell(1);
+    var v = x.insertCell(2);
+    var l = x.insertCell(3);
+    y.innerHTML = round;
+    z.innerHTML = user;
+    v.innerHTML = score;
+    l.innerHTML = level;
 
-    var cell1 = row.insertCell(0);
-    var cell2 = row.insertCell(1);
-    var cell3 = row.insertCell(2);
-    cell1.innerHTML = "NEW CELL1";
-    cell2.innerHTML = "NEW CELL2";
-    cell3.innerHTML = "NEW CELL1";
+    round++;
 
     noe.push(user, level);
-    console.log(user + "   fff " + level + "     " + noe);
+    console.log(user + "   fff " + level + "     " + noe + "    " + round);
 }
 
 function darkmode_get() {
@@ -100,7 +110,4 @@ function darkmode_get() {
         localStorage.setItem("dark_mode1", "white");
         localStorage.setItem("dark_mode2", "black");
     }
-
-    localStorage.setItem("user", document.getElementById("username").value);
-    localStorage.setItem("level", document.getElementById("level").value);
 }

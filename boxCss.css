@@ -15,11 +15,13 @@ h1 {
 table {
     margin: 100px auto;
     text-align: center;
+    background-image: linear-gradient(to bottom right, black, white);
 }
-th {
+th, td {
     border: 2px solid gray;
     padding: 1% 100px;
 }
+
 
 .form-floating {
     color: black;
@@ -85,8 +87,9 @@ th {
 }
 
 .restart_button {
-    margin: 100px auto;
+    margin: 100px;
     text-align: center;
+
 }
 .form-check-input ~ body[class=text-center] {
     background-color: black;
