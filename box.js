@@ -37,6 +37,8 @@ function start_round() {
     document.body.style.color = localStorage.getItem("dark_mode2");
     var level = localStorage.getItem("level");
 
+    alert(level)
+
     thelevel(level);
     get_random();
     time();
@@ -44,19 +46,19 @@ function start_round() {
 
 function thelevel(x) {
     var boxd = document.getElementById("box");
-    if (x === 1) {
+    if (x == 5) {
         boxd.style.width = "10px";
         boxd.style.height = "10px";
-    } else if (x === 2) {
+    } else if (x == 4) {
         boxd.style.width = "20px";
         boxd.style.height = "20px";
-    } else if (x === 3) {
+    } else if (x == 3) {
         boxd.style.width = "30px";
         boxd.style.height = "30px";
-    } else if (x === 4) {
+    } else if (x == 2) {
         boxd.style.width = "40px";
         boxd.style.height = "40px";
-    } else if (x === 5) {
+    } else if (x == 1) {
         boxd.style.width = "50px";
         boxd.style.height = "50px";
     }
@@ -92,7 +94,6 @@ function scoreboard() {
     round++;
 
     noe.push(user, level);
-    console.log(user + "   fff " + level + "     " + noe + "    " + round);
 }
 
 function darkmode_get() {
