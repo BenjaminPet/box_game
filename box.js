@@ -1,5 +1,4 @@
 var score = 0;
-var noe = [];
 var round = 1;
 
 
@@ -36,8 +35,6 @@ function start_round() {
     document.body.style.backgroundColor = localStorage.getItem("dark_mode1");
     document.body.style.color = localStorage.getItem("dark_mode2");
     var level = localStorage.getItem("level");
-
-    alert(level)
 
     thelevel(level);
     get_random();
@@ -80,6 +77,24 @@ function scoreboard() {
     var user = localStorage.getItem("user");
     var level = localStorage.getItem("level");
 
+    var table = document.getElementById("myTable");
+    var scorearr = localStorage.getItem("score_list");
+
+    //get table
+        //iterate over every array(row) within tableArr
+        for (let row of scorearr) {
+        //Insert a new row element into the table element
+        table.insertRow();
+        //Iterate over every index(cell) in each array(row)
+        for (let cell of row) {
+        //While iterating over the index(cell)
+        //insert a cell into the table element
+            let newCell = table.rows[table.rows.length - 1].insertCell();
+        //add text to the created cell element
+            newCell.textContent = cell;
+        }
+        }
+
     // add to table
     var x = document.getElementById('myTable').insertRow(-1);
     var y = x.insertCell(0);
@@ -91,9 +106,15 @@ function scoreboard() {
     v.innerHTML = score;
     l.innerHTML = level;
 
-    round++;
+    // add to score_list
 
-    noe.push(user, level);
+    var scorearr = localStorage.getItem("score_list");
+
+    localStorage.setItem("score_list", scorearr + [round, user, score, level]);
+
+    alert(localStorage.getItem("score_list"));
+
+    round++;
 }
 
 function darkmode_get() {
