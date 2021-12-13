@@ -22,7 +22,7 @@ function time() {
         counter--;
         // Display 'counter' wherever you want to display it.
         if (counter <= 0) {
-            localStorage.setItem("score", score);
+            sessionStorage.setItem("score", score);
             window.location.href = "./scoreboard.html";
         } else {
             document.getElementById("timer").innerHTML = "Timer: " + counter;
@@ -34,9 +34,9 @@ function time() {
 function start_round() {
     document.getElementById("start").style.display = "none";
     document.getElementById("box").style.display = "block";
-    document.body.style.backgroundColor = localStorage.getItem("dark_mode1");
-    document.body.style.color = localStorage.getItem("dark_mode2");
-    var level = localStorage.getItem("level");
+    document.body.style.backgroundColor = sessionStorage.getItem("dark_mode1");
+    document.body.style.color = sessionStorage.getItem("dark_mode2");
+    var level = sessionStorage.getItem("level");
 
     alert(level)
 
@@ -66,7 +66,7 @@ function thelevel(x) {
 }
 
 function box_game() {
-    localStorage.setItem("user", document.getElementById("username").value);
+    sessionStorage.setItem("user", document.getElementById("username").value);
     sessionStorage.setItem("level", document.getElementById("level").value);
 }
 
@@ -75,14 +75,15 @@ function new_game() {
 }
 
 function scoreboard() {
-    document.body.style.backgroundColor = localStorage.getItem("dark_mode1");
-    document.body.style.color = localStorage.getItem("dark_mode2");
-    var score = localStorage.getItem("score");
-    var user = localStorage.getItem("user");
+    document.body.style.backgroundColor = sessionStorage.getItem("dark_mode1");
+    document.body.style.color = sessionStorage.getItem("dark_mode2");
+    var score = sessionStorage.getItem("score");
+    var user = sessionStorage.getItem("user");
     var level = sessionStorage.getItem("level");
 
     var table = document.getElementById("myTable");
-    var scorearr = localStorage.getItem("score_list");
+    sessionStorage.setItem("score_list", [round, user, score, level]);
+    var scorearr = sessionStorage.getItem("score_list");
 
     //get table
         //iterate over every array(row) within tableArr
@@ -110,13 +111,8 @@ function scoreboard() {
     v.innerHTML = score;
     l.innerHTML = level;
 
-    // add to score_list
 
-    var scorearr = localStorage.getItem("score_list");
-
-    localStorage.setItem("score_list", scorearr + [round, user, score, level]);
-
-    alert(localStorage.getItem("score_list"));
+    alert(sessionStorage.getItem("level"));
 
     round++;
 }
@@ -128,12 +124,12 @@ function darkmode_get() {
     if (checkBox.checked == true) {
         document.getElementById("body1").style.backgroundColor = "black";
         document.body.style.color = "white";
-        localStorage.setItem("dark_mode1", "black");
-        localStorage.setItem("dark_mode2", "white");
+        sessionStorage.setItem("dark_mode1", "black");
+        sessionStorage.setItem("dark_mode2", "white");
     } else {
         document.getElementById("body1").style.backgroundColor = "white";
         document.body.style.color = "black";
-        localStorage.setItem("dark_mode1", "white");
-        localStorage.setItem("dark_mode2", "black");
+        sessionStorage.setItem("dark_mode1", "white");
+        sessionStorage.setItem("dark_mode2", "black");
     }
 }
