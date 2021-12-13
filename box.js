@@ -2,6 +2,8 @@ var score = 0;
 var round = 1;
 
 
+
+
 function get_random() {
     var rtop = Math.floor(Math.random() * 100);
     var rleft = Math.floor(Math.random() * 100);
@@ -65,7 +67,7 @@ function thelevel(x) {
 
 function box_game() {
     localStorage.setItem("user", document.getElementById("username").value);
-    localStorage.setItem("level", document.getElementById("level").value);
+    sessionStorage.setItem("level", document.getElementById("level").value);
 }
 
 function new_game() {
@@ -77,7 +79,7 @@ function scoreboard() {
     document.body.style.color = localStorage.getItem("dark_mode2");
     var score = localStorage.getItem("score");
     var user = localStorage.getItem("user");
-    var level = localStorage.getItem("level");
+    var level = sessionStorage.getItem("level");
 
     var table = document.getElementById("myTable");
     var scorearr = localStorage.getItem("score_list");
