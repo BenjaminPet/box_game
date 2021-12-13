@@ -82,14 +82,12 @@ function scoreboard() {
     var level = sessionStorage.getItem("level");
 
     var table = document.getElementById("myTable");
-    sessionStorage.setItem("score_list", [user, score, level]);
-    var scorearr = sessionStorage.getItem("score_list");
 
-    alert(scorearr)
+    var array = [score, level, user]
 
     //get table
         //iterate over every array(row) within tableArr
-        for (let row of scorearr) {
+        for (let row of array) {
         //Insert a new row element into the table element
         table.insertRow();
         //Iterate over every index(cell) in each array(row)
@@ -113,7 +111,10 @@ function scoreboard() {
     v.innerHTML = score;
     l.innerHTML = level;
 
-    alert(sessionStorage.getItem("level"));
+    sessionStorage.setItem("score_list", [user, score, level]);
+    var scorearr = sessionStorage.getItem("score_list");
+
+    alert(scorearr);
 
     round++;
 }
