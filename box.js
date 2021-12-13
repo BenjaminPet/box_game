@@ -83,13 +83,15 @@ function scoreboard() {
 
     var table = document.getElementById("myTable");
 
-    var array = [score, level, user]
+    var array = [{round, user, 1, level}, {round, user, score, level}]
 
     //get table
         //iterate over every array(row) within tableArr
         for (let row of array) {
         //Insert a new row element into the table element
-        table.insertRow();
+        array[0][0]++;
+        alert(array[0])
+        table.insertRow(-1);
         //Iterate over every index(cell) in each array(row)
         for (let cell of row) {
         //While iterating over the index(cell)
@@ -101,22 +103,20 @@ function scoreboard() {
         }
 
     // add to table
-    var x = document.getElementById('myTable').insertRow(-1);
-    var y = x.insertCell(0);
-    var z = x.insertCell(1);
-    var v = x.insertCell(2);
-    var l = x.insertCell(3);
-    y.innerHTML = round;
-    z.innerHTML = user;
-    v.innerHTML = score;
-    l.innerHTML = level;
+    //var x = document.getElementById('myTable').insertRow(-1);
+    //var y = x.insertCell(0);
+    //var z = x.insertCell(1);
+    //var v = x.insertCell(2);
+    //var l = x.insertCell(3);
+    //y.innerHTML = round;
+    //z.innerHTML = user;
+    //v.innerHTML = score;
+    //l.innerHTML = level;
 
     sessionStorage.setItem("score_list", [user, score, level]);
     var scorearr = sessionStorage.getItem("score_list");
 
     alert(scorearr);
-
-    round++;
 }
 
 function darkmode_get() {
