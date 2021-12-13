@@ -36,6 +36,8 @@ function start_round() {
     document.body.style.color = localStorage.getItem("dark_mode2");
     var level = localStorage.getItem("level");
 
+    alert(level)
+
     thelevel(level);
     get_random();
     time();
