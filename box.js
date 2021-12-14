@@ -81,23 +81,24 @@ function scoreboard() {
     var user = sessionStorage.getItem("user");
     var level = sessionStorage.getItem("level");
 
+    // add to list 
+
     var array = [user, score, level];
 
-    alert(array)
+    var storedArray = [sessionStorage.getItem("score_list")];
+    alert(storedArray)
+    storedArray.push(array)
+    alert(storedArray);
+    var len = storedArray.length;
+    alert("lengden er " + len);
+    sessionStorage.setItem("score_list", storedArray)
+    alert(sessionStorage.getItem("score_list"));
 
-    sessionStorage.setItem("score_list", scorearr + JSON.stringify(array))
 
-    alert(scorearr)
+    
 
-    var list = JSON.parse(sessionStorage.getItem("score_list"))
+    //past to table
 
-    alert(list);
-
-    var len = list.length;
-
-    alert(len);
-
-    // add to list 
     for (let i = 0; i < len; i++) {
         var x = document.getElementById('myTable').insertRow(-1);
         var y = x.insertCell(0);
@@ -105,9 +106,9 @@ function scoreboard() {
         var v = x.insertCell(2);
         var l = x.insertCell(3);
         y.innerHTML = i + 1;
-        z.innerHTML = list[0];
-        v.innerHTML = list[1];
-        l.innerHTML = list[2];
+        z.innerHTML = 1;
+        v.innerHTML = 1;
+        l.innerHTML = 1;
     }
 }
 
