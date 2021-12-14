@@ -1,7 +1,7 @@
 var score = 0;
 var round = 1;
 
-var scorearr = []; 
+var scorearr; 
 
 
 function get_random() {
@@ -86,13 +86,12 @@ function scoreboard() {
     var array = [user, score, level];
 
     var storedArray = [sessionStorage.getItem("score_list")];
-    alert(storedArray)
-    storedArray.push(array)
+    storedArray.push(JSON.stringify(array))
     alert(storedArray);
     var len = storedArray.length;
     alert("lengden er " + len);
-    sessionStorage.setItem("score_list", storedArray)
-    alert(sessionStorage.getItem("score_list"));
+    sessionStorage.setItem("score_list", JSON.stringify(storedArray))
+    alert(JSON.stringify(sessionStorage.getItem("score_list")));
 
 
     
@@ -106,9 +105,9 @@ function scoreboard() {
         var v = x.insertCell(2);
         var l = x.insertCell(3);
         y.innerHTML = i + 1;
-        z.innerHTML = 1;
-        v.innerHTML = 1;
-        l.innerHTML = 1;
+        z.innerHTML = storedArray[i][0];
+        v.innerHTML = storedArray[i][1];
+        l.innerHTML = storedArray[i][2];
     }
 }
 
