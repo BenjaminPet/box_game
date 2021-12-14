@@ -1,7 +1,7 @@
 var score = 0;
 var round = 1;
 
-var list = [];
+var scorearr = []; 
 
 
 function get_random() {
@@ -32,13 +32,12 @@ function time() {
 }
 
 function start_round() {
+    alert(sessionStorage.getItem("score_list"))
     document.getElementById("start").style.display = "none";
     document.getElementById("box").style.display = "block";
     document.body.style.backgroundColor = sessionStorage.getItem("dark_mode1");
     document.body.style.color = sessionStorage.getItem("dark_mode2");
     var level = sessionStorage.getItem("level");
-
-    alert(level)
 
     thelevel(level);
     get_random();
@@ -66,12 +65,7 @@ function thelevel(x) {
 }
 
 function box_game() {
-
-    var storedArray = sessionStorage.getItem("score_list");
-    var scorearr = JSON.parse(storedArray);
-
-    alert("array " + list.length + " " + list + " " + scorearr)
-
+    alert(sessionStorage.getItem("score_list"))
     sessionStorage.setItem("user", document.getElementById("username").value);
     sessionStorage.setItem("level", document.getElementById("level").value);
 }
@@ -89,15 +83,19 @@ function scoreboard() {
 
     var array = [user, score, level];
 
-    list.push(array)
+    alert(array)
 
     sessionStorage.setItem("score_list", scorearr + JSON.stringify(array))
-    var storedArray = sessionStorage.getItem("score_list");
-    var scorearr = JSON.parse(storedArray);
 
-    alert("array " + list.length + " " + list + " " + scorearr)
+    alert(scorearr)
+
+    var list = JSON.parse(sessionStorage.getItem("score_list"))
+
+    alert(list);
 
     var len = list.length;
+
+    alert(len);
 
     // add to list 
     for (let i = 0; i < len; i++) {
@@ -107,9 +105,9 @@ function scoreboard() {
         var v = x.insertCell(2);
         var l = x.insertCell(3);
         y.innerHTML = i + 1;
-        z.innerHTML = list[i][0];
-        v.innerHTML = list[i][1];
-        l.innerHTML = list[i][2];
+        z.innerHTML = list[0];
+        v.innerHTML = list[1];
+        l.innerHTML = list[2];
     }
 }
 
