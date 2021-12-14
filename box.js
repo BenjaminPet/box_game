@@ -1,7 +1,7 @@
 var score = 0;
 var round = 1;
 
-
+var list = [];
 
 
 function get_random() {
@@ -66,6 +66,12 @@ function thelevel(x) {
 }
 
 function box_game() {
+
+    var storedArray = sessionStorage.getItem("score_list");
+    var scorearr = JSON.parse(storedArray);
+
+    alert("array " + list.length + " " + list + " " + scorearr)
+
     sessionStorage.setItem("user", document.getElementById("username").value);
     sessionStorage.setItem("level", document.getElementById("level").value);
 }
@@ -81,42 +87,30 @@ function scoreboard() {
     var user = sessionStorage.getItem("user");
     var level = sessionStorage.getItem("level");
 
-    var table = document.getElementById("myTable");
+    var array = [user, score, level];
 
-    var array = [{round, user, 1, level}, {round, user, score, level}]
+    list.push(array)
 
-    //get table
-        //iterate over every array(row) within tableArr
-        for (let row of array) {
-        //Insert a new row element into the table element
-        array[0][0]++;
-        alert(array[0])
-        table.insertRow(-1);
-        //Iterate over every index(cell) in each array(row)
-        for (let cell of row) {
-        //While iterating over the index(cell)
-        //insert a cell into the table element
-            let newCell = table.rows[table.rows.length - 1].insertCell();
-        //add text to the created cell element
-            newCell.textContent = cell;
-        }
-        }
+    sessionStorage.setItem("score_list", scorearr + JSON.stringify(array))
+    var storedArray = sessionStorage.getItem("score_list");
+    var scorearr = JSON.parse(storedArray);
 
-    // add to table
-    //var x = document.getElementById('myTable').insertRow(-1);
-    //var y = x.insertCell(0);
-    //var z = x.insertCell(1);
-    //var v = x.insertCell(2);
-    //var l = x.insertCell(3);
-    //y.innerHTML = round;
-    //z.innerHTML = user;
-    //v.innerHTML = score;
-    //l.innerHTML = level;
+    alert("array " + list.length + " " + list + " " + scorearr)
 
-    sessionStorage.setItem("score_list", [user, score, level]);
-    var scorearr = sessionStorage.getItem("score_list");
+    var len = list.length;
 
-    alert(scorearr);
+    // add to list 
+    for (let i = 0; i < len; i++) {
+        var x = document.getElementById('myTable').insertRow(-1);
+        var y = x.insertCell(0);
+        var z = x.insertCell(1);
+        var v = x.insertCell(2);
+        var l = x.insertCell(3);
+        y.innerHTML = i + 1;
+        z.innerHTML = list[i][0];
+        v.innerHTML = list[i][1];
+        l.innerHTML = list[i][2];
+    }
 }
 
 function darkmode_get() {
