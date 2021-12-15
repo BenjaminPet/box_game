@@ -1,7 +1,8 @@
 var score = 0;
 var round = 1;
 
-var scorearr; 
+var scorearr = []; 
+var storedArray;
 
 
 function get_random() {
@@ -32,7 +33,6 @@ function time() {
 }
 
 function start_round() {
-    alert(sessionStorage.getItem("score_list"))
     document.getElementById("start").style.display = "none";
     document.getElementById("box").style.display = "block";
     document.body.style.backgroundColor = sessionStorage.getItem("dark_mode1");
@@ -65,7 +65,6 @@ function thelevel(x) {
 }
 
 function box_game() {
-    alert(sessionStorage.getItem("score_list"))
     sessionStorage.setItem("user", document.getElementById("username").value);
     sessionStorage.setItem("level", document.getElementById("level").value);
 }
@@ -81,30 +80,44 @@ function scoreboard() {
     var user = sessionStorage.getItem("user");
     var level = sessionStorage.getItem("level");
 
+    // get list 
+    let array = [user, score, level];
+    let storedArray = sessionStorage.getItem("score_list");
+
+    storedArray = JSON.parse(storedArray)
+
+    storedArray = storedArray;
+
+
+
     // add to list 
+    if (sessionStorage.getItem("score_list") == null) {
+        sessionStorage.setItem("score_list", "[]");
+    }
+    
+    console.log(storedArray);
+    console.log(array);
 
-    var array = [user, score, level];
+    storedArray.push([user, score, level]);
+    console.log(storedArray);
 
-    var storedArray = [sessionStorage.getItem("score_list")];
-    storedArray.push(JSON.stringify(array))
-    alert(storedArray);
-    var len = storedArray.length;
-    alert("lengden er " + len);
-    sessionStorage.setItem("score_list", JSON.stringify(storedArray))
-    alert(JSON.stringify(sessionStorage.getItem("score_list")));
+    let len = storedArray.length;
+    console.log("lengden er " + len);
+
+    sessionStorage.setItem("score_list", JSON.stringify(storedArray));
 
 
     
 
     //past to table
 
-    for (let i = 0; i < len; i++) {
+    for (let i = 1; i < len; i++) {
         var x = document.getElementById('myTable').insertRow(-1);
         var y = x.insertCell(0);
         var z = x.insertCell(1);
         var v = x.insertCell(2);
         var l = x.insertCell(3);
-        y.innerHTML = i + 1;
+        y.innerHTML = i;
         z.innerHTML = storedArray[i][0];
         v.innerHTML = storedArray[i][1];
         l.innerHTML = storedArray[i][2];
