@@ -17,8 +17,8 @@ function get_random() {
 }
 
 function time() {
-    var counter = 5;
-    document.getElementById("timer").innerHTML = "Timer: 5";
+    var counter = 30;
+    document.getElementById("timer").innerHTML = "Timer: " + counter;
     var interval = setInterval(function () {
         counter--;
         // Display 'counter' wherever you want to display it.
