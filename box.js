@@ -18,6 +18,7 @@ function get_random() {
 
 function time() {
     var counter = 30;
+    var tick = new Audio("./images a")
     document.getElementById("timer").innerHTML = "Timer: " + counter;
     var interval = setInterval(function () {
         counter--;
@@ -27,6 +28,7 @@ function time() {
             window.location.href = "./scoreboard.html";
         } else {
             document.getElementById("timer").innerHTML = "Timer: " + counter;
+            
 
         }
     }, 1000);
