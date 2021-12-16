@@ -24,7 +24,7 @@ function time() {
         // Display 'counter' wherever you want to display it.
         if (counter <= 0) {
             sessionStorage.setItem("score", score);
-            var tick = new sound("./utstyr/448081__breviceps__tic-toc-click.wav").preload;
+            var tick = new Audio("./utstyr/448081__breviceps__tic-toc-click.wav").preload;
             tick.play();
         } else {
             document.getElementById("timer").innerHTML = "Timer: " + counter;
