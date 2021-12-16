@@ -6,6 +6,8 @@ var storedArray;
 
 
 function get_random() {
+    new Audio("./utstyr/264981__renatalmar__sfx-magic.wav").play();
+    
     var rtop = Math.floor(Math.random() * 100);
     var rleft = Math.floor(Math.random() * 100);
 
@@ -24,11 +26,10 @@ function time() {
         // Display 'counter' wherever you want to display it.
         if (counter <= 0) {
             sessionStorage.setItem("score", score);
+            window.location.href = "./scoreboard.html";
         } else {
             document.getElementById("timer").innerHTML = "Timer: " + counter;
-            var tick = new Audio("./utstyr/448081__breviceps__tic-toc-click.wav").preload;
-            tick.play();
-            
+            new Audio("./utstyr/448081__breviceps__tic-toc-click.wav").play();
 
         }
     }, 1000);

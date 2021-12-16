@@ -21,6 +21,13 @@ th, td {
     padding: 1% 100px;
 }
 
+.tablehead {
+    font-size: large;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 3px 2px black;
+}
+
 
 .form-floating {
     color: black;
@@ -45,7 +52,7 @@ th, td {
 }
 
 @keyframes pop{
-    50%  {transform: scale(1.2);}
+    50%  {transform: scale(1.3);}
 }
 
 #live_score {
