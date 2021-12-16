@@ -18,18 +18,14 @@ function get_random() {
 
 function time() {
     var counter = 5;
-    var tick = new sound("./utstyr/448081__breviceps__tic-toc-click.wav").preload;
     document.getElementById("timer").innerHTML = "Timer: " + counter;
     var interval = setInterval(function () {
         counter--;
         // Display 'counter' wherever you want to display it.
         if (counter <= 0) {
             sessionStorage.setItem("score", score);
-            document.querySelector(".tick").addEventListener("click", function() {
-
-                // ping clicked, play ping sound:
-                tick.play()
-            })
+            var tick = new sound("./utstyr/448081__breviceps__tic-toc-click.wav").preload;
+            tick.play();
         } else {
             document.getElementById("timer").innerHTML = "Timer: " + counter;
             
