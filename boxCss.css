@@ -42,7 +42,7 @@ th, td {
 
 #box:active {
     background-color: green;
-    animation: pop 0.2s linear 1;
+    animation: box-pop 0.2s linear 1;
 }
 
 @keyframes box_pop {
