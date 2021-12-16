@@ -40,6 +40,15 @@ th, td {
     background-color: greenyellow;
 }
 
+#box:active {
+    background-color: green;
+    animation: pop 0.2s linear 1;
+}
+
+@keyframes box_pop {
+    50%  {transform: scale(1.2);}
+}
+
 #live_score {
     color: white;
     position: absolute;
