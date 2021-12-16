@@ -17,7 +17,7 @@ function get_random() {
 }
 
 function time() {
-    var counter = 30;
+    var counter = 5;
     var tick = new sound("./utstyr/448081__breviceps__tic-toc-click.wav").preload;
     document.getElementById("timer").innerHTML = "Timer: " + counter;
     var interval = setInterval(function () {
