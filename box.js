@@ -35,13 +35,17 @@ function time() {
 function start_round() {
     document.getElementById("start").style.display = "none";
     document.getElementById("box").style.display = "block";
-    document.body.style.backgroundColor = sessionStorage.getItem("dark_mode1");
-    document.body.style.color = sessionStorage.getItem("dark_mode2");
     var level = sessionStorage.getItem("level");
 
     thelevel(level);
     get_random();
     time();
+}
+
+function onloade_boxgame() {
+    document.body.style.backgroundColor = sessionStorage.getItem("dark_mode1");
+    document.body.style.color = sessionStorage.getItem("dark_mode2");
+    document.getElementById("start").style.color = sessionStorage.getItem("dark_mode2");
 }
 
 function thelevel(x) {
